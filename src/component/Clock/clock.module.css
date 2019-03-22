@@ -1,0 +1,20 @@
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px; /* Negative half of height. */
+    margin-left: -295px; /* Negative half of width. */
+}
+@media only screen and (max-width: 600px) and (min-width: 400px){
+    .clock{
+        width: 400px;
+        margin-left: -200px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .clock {
+        width: 280px;
+        margin-left: -140px;
+    }
+}

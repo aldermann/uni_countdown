@@ -1,0 +1,48 @@
+.header {
+    font-family: "Droid Sans", sans-serif;
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+.first {
+    width: 180px;
+    margin-left: -90px;
+}
+
+.second {
+    width: 600px;
+    margin-left: -300px;
+}
+
+@media only screen and (min-width: 600px) {
+    .first {
+        margin-top: -150px;
+    }
+    .second {
+        margin-top: 100px;
+    }
+}
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    .first {
+        margin-top: -100px;
+    }
+    .second {
+        width: 350px;
+        margin-left: -175px;
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .first {
+        margin-top: -95px;
+    }
+    .second {
+        width: 190px;
+        margin-left: -95px;
+        margin-top: 45px;
+    }
+}
