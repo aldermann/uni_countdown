@@ -22,24 +22,10 @@
     border-radius: 3px;
     box-shadow: 0 10px 10px -10px grey;
 }
-
-@media only screen and (max-width: 600px) and (min-width: 400px){
-    .flipUnitContainer {
-        width: 80px;
-        height: 80px;
-    }
-}
-@media only screen and (max-width: 400px){
-    .flipUnitContainer {
-        width: 60px;
-        height: 60px;
-    }
-}
-
 .unitDisplay {
     display: block;
     position: relative;
-    width: 140px;
+    width: 120px;
     height: 120px;
     text-align: center;
     -webkit-perspective-origin: 50% 50%;
@@ -48,6 +34,38 @@
     font-family: "Droid Sans Mono", monospace;
     color: white;
     font-size: 1rem;
+}
+
+@media only screen and (max-width: 960px) and (min-width: 640px) {
+    .flipUnitContainer {
+        width: 100px;
+        height: 100px;
+    }
+    .unitDisplay {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 640px) and (min-width: 400px) {
+    .flipUnitContainer {
+        width: 80px;
+        height: 80px;
+    }
+    .unitDisplay {
+        width: 80px;
+        height: 80px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .flipUnitContainer {
+        width: 60px;
+        height: 60px;
+    }
+    .unitDisplay {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .upperCard,

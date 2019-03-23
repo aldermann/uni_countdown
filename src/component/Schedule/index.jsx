@@ -2,29 +2,33 @@ import React from "react";
 import { Card } from "antd";
 import posed from "react-pose";
 import style from "./schedule.module.css";
-
 import handleViewport from "react-in-viewport";
+import TimeTable from "./TimeTable";
 
 const Box = posed.div({
     visible: {
+        y: 0,
         opacity: 1,
         transition: {
-            duration: 300
+            delay: 700,
+            duration: 700,
+            ease: "backOut"
         }
     },
     hidden: {
-        opacity: 0
+        y: 100,
+        opacity: 0,
+        transition: {
+            duration: 300,
+            ease: "linear"
+        }
     }
 });
 
-const Block = props => {
+const ViewportBlock = handleViewport(props => {
     const { innerRef } = props;
-    return (
-        <div className="viewport-block" ref={innerRef}/>
-    );
-};
-
-const ViewportBlock = handleViewport(Block);
+    return <div className="viewport-block" ref={innerRef} />;
+});
 
 // noinspection JSUnusedGlobalSymbols
 export default class Schedule extends React.Component {
@@ -35,23 +39,18 @@ export default class Schedule extends React.Component {
         };
     }
     onChangeVisibility = visibility => () => {
-        console.log(visibility);
         this.setState({ visible: visibility });
     };
     render() {
         return (
             <div className={style.card}>
                 <Box pose={this.state.visible ? "visible" : "hidden"}>
-                    <Card title="Default size card">
+                    <Card title="Lịch thi đại học">
                         <ViewportBlock
                             onEnterViewport={this.onChangeVisibility(true)}
                             onLeaveViewport={this.onChangeVisibility(false)}
                         />
-                        <p>{this.state.visible ? "visible" : "hidden"}</p>
-                        <p>Hello</p>
-                        <p>Hello</p>
-                        <p>Hello</p>
-                        <p>Hello</p>
+                        <TimeTable />
                     </Card>
                 </Box>
             </div>
