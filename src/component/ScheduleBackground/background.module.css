@@ -1,0 +1,8 @@
+.background {
+    box-shadow: inset 0 40px 100px -16px #00095C;
+    background: #00095C url("../../resource/background.webp") no-repeat top center;
+    background-size: cover ;
+    height: 100%;
+    width: 100%;
+    min-width: 400px;
+}
