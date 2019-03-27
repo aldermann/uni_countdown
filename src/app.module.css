@@ -9,7 +9,7 @@
 
 .page {
     position: relative;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     height: 100vh;
     padding: 0;
 }
@@ -17,11 +17,9 @@
 .credit {
     color: white;
     text-align: center;
-    width: 500px;
+    width: 100%;
     position: absolute;
-    bottom: 1%;
-    left: 50%;
-    margin-left: -250px;
+    bottom: 10px;
 }
 .heart {
     color: red;

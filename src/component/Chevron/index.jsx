@@ -3,21 +3,19 @@ import style from "./chevron.module.css";
 import posed from "react-pose";
 import handleViewport from "react-in-viewport";
 
-const duration = 1000,
-    delay = 200;
-
 const ChevronContainer = posed.div({
+    initialPose: "hidden",
     visible: {
         opacity: 1,
         transition: {
-            duration: duration,
+            duration: 1000,
             ease: "easeInOut"
         }
     },
     hidden: {
-        opacity: 0.1,
+        opacity: 0.2,
         transition: {
-            duration: duration,
+            duration: 1000,
             ease: "easeInOut"
         }
     }
@@ -27,14 +25,14 @@ const Container = posed.div({
     visible: {
         opacity: 1,
         transition: {
-            duration: 100,
+            duration: 1000,
             ease: "easeIn"
         }
     },
     hidden: {
         opacity: 0,
         transition: {
-            duration: 100,
+            duration: 1000,
             ease: "easeIn"
         }
     }
@@ -62,31 +60,25 @@ function Chevron() {
 
 class ChevronPack extends Component {
     state = {
-        visible1: true,
-        visible2: true,
-        visible3: true,
+        animation: "",
         visible: true
     };
 
-    switchVisibility = st => () => {
-        const v = this.state[st];
-        this.setState({
-            [st]: !v
-        });
+    nextAnimation = () => {
+        let a = this.state.animation;
+        if (a === "") a = "23";
+        else if (a === "12") a = "23";
+        else if (a === "23") a = "31";
+        else if (a === "31") a = "12";
+        this.setState({ animation: a });
+    };
+
+    currentState = id => {
+        return this.state.animation.indexOf(id) === -1 ? "visible" : "hidden";
     };
 
     componentDidMount() {
-        setInterval(this.switchVisibility("visible1"), duration + 100);
-        setTimeout(
-            () =>
-                setInterval(this.switchVisibility("visible2"), duration + 100),
-            delay
-        );
-        setTimeout(
-            () =>
-                setInterval(this.switchVisibility("visible3"), duration + 100),
-            delay * 2
-        );
+        setInterval(this.nextAnimation, 900);
     }
 
     onClick = () => {
@@ -100,24 +92,18 @@ class ChevronPack extends Component {
     render() {
         return (
             <Container pose={this.state.visible ? "visible" : "hidden"}>
-                <ViewportBlock
-                    onEnterViewport={this.onChangeVisibility(true)}
-                    onLeaveViewport={this.onChangeVisibility(false)}
-                />
                 <div className={style["chevron-pack"]} onClick={this.onClick}>
-                    <ChevronContainer
-                        pose={this.state.visible1 ? "visible" : "hidden"}
-                    >
+                    <ViewportBlock
+                        onEnterViewport={this.onChangeVisibility(true)}
+                        onLeaveViewport={this.onChangeVisibility(false)}
+                    />
+                    <ChevronContainer pose={this.currentState("1")}>
                         <Chevron />
                     </ChevronContainer>
-                    <ChevronContainer
-                        pose={this.state.visible2 ? "visible" : "hidden"}
-                    >
+                    <ChevronContainer pose={this.currentState("2")}>
                         <Chevron />
                     </ChevronContainer>
-                    <ChevronContainer
-                        pose={this.state.visible3 ? "visible" : "hidden"}
-                    >
+                    <ChevronContainer pose={this.currentState("3")}>
                         <Chevron />
                     </ChevronContainer>
                 </div>

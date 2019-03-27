@@ -9,7 +9,6 @@ a {
 
 html, body{
     background: black;
-    min-height: 600px;
 }
 body {
     margin: 0;
@@ -28,8 +27,7 @@ td {
     background: white !important;
 }
 #root {
-    min-height: 600px;
-    height: 100vh;
+    height: 100%;
 }
 @media only screen and (min-width: 960px){
     html {

@@ -51,7 +51,7 @@ export default class Schedule extends React.Component {
                             onEnterViewport={this.onChangeVisibility(true)}
                             onLeaveViewport={this.onChangeVisibility(false)}
                         />
-                        <div style={{ overflowX: "scroll", overflowY: "scroll" }}>
+                        <div className={style["card-div"]}>
                             <TimeTable />
                         </div>
                     </Card>

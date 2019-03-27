@@ -5,6 +5,17 @@
     left: 50%;
     margin-left: -25px;
 }
+@media (max-width: 640px) {
+    .chevron-pack {
+        transform: scale(0.5);
+        margin-left: -32px;
+    }
+}
+@media (max-height: 640px) {
+    .chevron-pack {
+        top: 70%;
+    }
+}
 .chevron {
     margin: 10px;
 }
@@ -16,13 +27,13 @@
 .chevron-left {
     transform: rotate(45deg);
     position: relative;
-    right: 15px;
+    right: 14px;
     border-radius: 2px;
 }
 .chevron-right {
     transform: rotate(-45deg);
     position: relative;
-    left: 15px;
+    left: 14px;
     bottom: 10px;
     border-radius: 2px;
 }
