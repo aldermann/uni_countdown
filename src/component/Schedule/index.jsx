@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "antd";
 import posed from "react-pose";
 import style from "./schedule.module.css";
+import "./schedule.css";
 import handleViewport from "react-in-viewport";
 import TimeTable from "./TimeTable";
 
@@ -50,7 +51,9 @@ export default class Schedule extends React.Component {
                             onEnterViewport={this.onChangeVisibility(true)}
                             onLeaveViewport={this.onChangeVisibility(false)}
                         />
-                        <TimeTable />
+                        <div style={{ overflowX: "scroll", overflowY: "scroll" }}>
+                            <TimeTable />
+                        </div>
                     </Card>
                 </Box>
             </div>

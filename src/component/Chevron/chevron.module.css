@@ -1,0 +1,28 @@
+.chevron-pack {
+    z-index: 1000;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-left: -25px;
+}
+.chevron {
+    margin: 10px;
+}
+.chevron-piece {
+    width: 50px;
+    height: 10px;
+    background-color: white;
+}
+.chevron-left {
+    transform: rotate(45deg);
+    position: relative;
+    right: 15px;
+    border-radius: 2px;
+}
+.chevron-right {
+    transform: rotate(-45deg);
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+    border-radius: 2px;
+}

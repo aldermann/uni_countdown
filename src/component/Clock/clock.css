@@ -31,7 +31,8 @@
     -webkit-perspective-origin: 50% 50%;
     perspective-origin: 50% 50%;
     -webkit-perspective: 300px;
-    font-family: "Droid Sans Mono", monospace;
+    font-family: "Droid Sans", sans-serif;
+    -webkit-filter: blur(0.000001px);
     color: white;
     font-size: 1rem;
 }
@@ -82,6 +83,7 @@
 .lowerCard span {
     font-size: 5rem;
     font-family: "Droid Sans Mono", monospace;
+    -webkit-filter: blur(0.000001px);
     font-weight: lighter;
     color: #333333;
 }
@@ -121,6 +123,7 @@
 }
 .flipCard span {
     font-family: "Droid Sans Mono", monospace;
+    -webkit-filter: blur(0.000001px);
     font-size: 5rem;
     font-weight: lighter;
     color: #333333;

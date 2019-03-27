@@ -31,7 +31,7 @@ const columns = [
         dataIndex: "test",
         colSpan: 2,
         className: style.column,
-        render: merge_row("11113001300", "33221112111")
+        render: merge_row("11113001300", "44221112111")
     },
     {
         title: "Môn thi",
@@ -47,7 +47,13 @@ const columns = [
         render: merge_row("11111111111", "00111111111")
     },
     {
-        title: "Giờ bắt đầu làm bài",
+        title: "Giờ phát đề",
+        dataIndex: "preparation_time",
+        className: style.column,
+        render: merge_row("11111111111", "00111111111")
+    },
+    {
+        title: "Giờ bắt đầu",
         dataIndex: "start_time",
         className: style.column
     }
@@ -56,27 +62,28 @@ const data = [
     {
         date: "24/6/2019",
         period: "Sáng",
-        test: "Họp cán bộ coi thi",
-        start_time: "08:00"
+        test: "Họp cán bộ coi thi"
     },
     {
         date: "24/6/2019",
         period: "Chiều",
-        test: "Làm thủ tục dự thi",
+        test: "Làm thủ tục dự thi, nghe phổ biến quy chế dự thi",
         start_time: "14:00"
     },
     {
         date: "25/6/2019",
         period: "Sáng",
         test: "Ngữ Văn",
-        start_time: "07:30",
+        preparation_time: "07:30",
+        start_time: "07:35",
         duration: "120 phút"
     },
     {
         date: "25/6/2019",
         period: "Chiều",
         test: "Toán",
-        start_time: "14:00",
+        preparation_time: "14:20",
+        start_time: "14:30",
         duration: "90 phút"
     },
     {
@@ -84,7 +91,8 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHTN",
         subject: "Vật lý",
-        start_time: "07:30",
+        preparation_time: "07:30",
+        start_time: "07:35",
         duration: "50 phút"
     },
     {
@@ -92,7 +100,8 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHTN",
         subject: "Hóa học",
-        start_time: "08:30",
+        preparation_time: "08:30",
+        start_time: "08:35",
         duration: "50 phút"
     },
     {
@@ -100,14 +109,16 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHTN",
         subject: "Sinh học",
-        start_time: "09:30",
+        preparation_time: "09:30",
+        start_time: "09:35",
         duration: "50 phút"
     },
     {
         date: "26/6/2019",
         period: "Chiều",
         test: "Ngoại ngữ",
-        start_time: "14:20",
+        preparation_time: "14:20",
+        start_time: "14:30",
         duration: "60 phút"
     },
     {
@@ -115,7 +126,8 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHXH",
         subject: "Lịch sử",
-        start_time: "07:30",
+        preparation_time: "07:30",
+        start_time: "07:35",
         duration: "50 phút"
     },
     {
@@ -123,7 +135,8 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHXH",
         subject: "Địa lý",
-        start_time: "08:30",
+        preparation_time: "08:30",
+        start_time: "08:35",
         duration: "50 phút"
     },
     {
@@ -131,7 +144,8 @@ const data = [
         period: "Sáng",
         test: "Bài thi KHXH",
         subject: "GDCD",
-        start_time: "08:30",
+        preparation_time: "09:30",
+        start_time: "09:35",
         duration: "50 phút"
     }
 ];

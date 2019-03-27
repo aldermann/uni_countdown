@@ -1,5 +1,6 @@
 .header {
     font-family: "Droid Sans", sans-serif;
+    -webkit-filter: blur(0.000001px);
     font-size: 3rem;
     color: white;
     position: absolute;
@@ -20,38 +21,38 @@
 
 @media (min-width: 960px) {
     .first {
-        margin-top: -180px;
+        margin-top: -240px;
     }
     .second {
-        margin-top: 90px;
+        margin-top: 40px;
     }
 }
 
 @media only screen and (min-width: 640px) and (max-width: 960px){
     .first {
-        margin-top: -150px;
+        margin-top: -220px;
     }
     .second {
-        margin-top: 75px;
+        margin-top: 20px;
     }
 }
 @media only screen and (max-width: 640px) and (min-width: 400px) {
     .first {
-        margin-top: -120px;
+        margin-top: -200px;
     }
     .second {
         width: 350px;
         margin-left: -175px;
-        margin-top: 60px;
+        margin-top: 0;
     }
 }
 @media only screen and (max-width: 400px) {
     .first {
-        margin-top: -100px;
+        margin-top: -180px;
     }
     .second {
         width: 240px;
         margin-left: -120px;
-        margin-top: 20px;
+        margin-top: -20px;
     }
 }

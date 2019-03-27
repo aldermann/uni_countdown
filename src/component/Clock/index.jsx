@@ -116,6 +116,7 @@ export default class FlipCountdownClock extends React.Component {
         const distance = this.target - new Date();
         // set time units
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.title = `Còn ${days} ngày trước khi thi`;
         const hours = Math.floor(
             (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
         );
