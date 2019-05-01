@@ -7,6 +7,7 @@ import FirstHeader from "./component/Header/FirstHeader";
 import SecondHeader from "./component/Header/SecondHeader";
 import Schedule from "./component/Schedule/";
 import Chevron from "./component/Chevron";
+import { message } from "antd";
 
 class App extends Component {
     constructor(props) {
@@ -16,6 +17,21 @@ class App extends Component {
             status: ""
         };
         this.myRef = React.createRef(); // Create a ref object
+    }
+
+    componentDidMount() {
+        const shownMessage = localStorage.getItem("shown_message");
+        if (shownMessage !== "done") {
+            setTimeout(
+                () =>
+                    message.info(
+                        "Chỉ cần vào trang web một lần, bạn có thể trở lại đây mà không cần mạng",
+                        4
+                    ),
+                5000
+            );
+            localStorage.setItem("shown_message", "done");
+        }
     }
 
     onClick = () => {
